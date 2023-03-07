@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.*;
 
+
 public class Prueba{
 
     static ArrayList<Fumador> fumadores = new ArrayList<Fumador>();
