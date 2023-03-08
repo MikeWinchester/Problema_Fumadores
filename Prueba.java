@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Random;
 
 
 public class Prueba{
@@ -10,18 +10,18 @@ public class Prueba{
     public static void main(String[] args) {
 
         crearFumadores();
+        Agente agente = new Agente(ingredientes);
+        agente.colocarIngredientes();
+        
 
     }
 
     public static void crearFumadores(){
 
+        llenarIngredientes();
+
         Random rand = new Random();
-        int h=3;
-
-        ingredientes.add("Tabaco");
-        ingredientes.add("Papel");
-        ingredientes.add("Fósforos");
-
+        int h=ingredientes.size();
         
         for(int i=0;i<3;i++){
             int random = rand.nextInt(h);
@@ -30,12 +30,18 @@ public class Prueba{
             ingredientes.remove(random);
             h--;
         }
-        
-        System.out.println("FUMADORES DISPONIBLES");
-        System.out.println("---------------------");
-        for (Fumador f : fumadores){
-            System.out.println("Fumador " + f.getNumero() + ", ingrediente: " + f.getIngrediente());
-            
+
+        for (Fumador fumador : fumadores) {
+            System.out.println(fumador.toString());
         }
+
+        llenarIngredientes();
+    }
+
+    public static void llenarIngredientes(){
+
+        ingredientes.add("tabaco");
+        ingredientes.add("papel");
+        ingredientes.add("fósforos");
     }
 }

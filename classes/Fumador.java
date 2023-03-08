@@ -11,11 +11,11 @@ public class Fumador{
     }
 
     public void Fumar(){
-        System.out.println("El fumador "+ this.numero + " ha comenzado a fumar.");
+        System.out.println("El fumador "+ numero + " ha comenzado a fumar.");
     }
 
     public void Esperar(){
-        System.out.println("El fumador "+ this.numero + " está en la sala de espera.");
+        System.out.println("El fumador "+ numero + " está en la sala de espera.");
     }
 
     public String getIngrediente() {
@@ -25,4 +25,11 @@ public class Fumador{
     public int getNumero() {
         return numero;
     }
+
+    @Override
+    public String toString() {
+        return "El fumador " + numero + " tiene " + ingrediente + ".";
+    }
+
+    
 }
